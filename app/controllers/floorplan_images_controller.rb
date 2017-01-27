@@ -1,0 +1,2 @@
+class FloorplanImagesController < ApplicationController
+end

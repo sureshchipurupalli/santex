@@ -1,0 +1,103 @@
+<div class="row">
+  <h1>Home</h1>
+
+  <input type="hidden" id="HomeID" value="<%= @home.id %>">
+
+  <p>
+    <b>Home Type: </b>
+    <%= @home.home_type %>
+  </p>
+
+
+  <p>
+    <b>Name: </b>
+    <%= @home.name %>
+  </p>
+
+  <p>
+    <b>Description: </b>
+    <%= @home.description %>
+  </p>
+
+  <p>
+    <b>Number of Bathrooms: </b>
+    <%= @home.no_of_bathrooms %>
+  </p>
+
+   <p>
+    <b>Building method: </b>
+    <%= @home.building_method %>
+  </p>
+
+   <p>
+    <b>Series: </b>
+    <%= @home.series %>
+  </p>
+
+
+   <p>
+    <b>Sq.feet: </b>
+    <%= @home.sft %>
+  </p>
+
+   <p>
+    <b>Number of Bedrooms: </b>
+    <%= @home.no_of_bedrooms %>
+  </p>
+
+  <p>
+    <b>Name: </b>
+    <%= @home.name %>
+  </p>
+
+
+  <p>
+    <b>Other Details: </b>
+    <%= @home.other %>
+  </p>
+
+<div class="form-actions">
+    <%= link_to 'Back', homes_path, :class => 'btn btn-mini'  %>
+    <%= link_to 'Edit hmes', edit_home_path(@home), :class => 'btn btn-mini' %>
+    <%= link_to 'Delete', home_path(@home), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-mini' %>
+    
+  </div>
+
+<h2>Pictures</h2>
+</div>
+
+
+<div class="col-md-8">
+  <div class="container1" id="container">
+    <div class="gallery" role="listbox">
+
+      <ul class="row" >
+				
+        <% if @home_photos %>
+        <% @home_photos.each do |home_photo| %>
+      
+        <li><!--a tabindex="1"--><%= image_tag home_photo.image.url(), class:"jbox-img"%><!--/a--></li>
+         <!--span class="close"></span-->
+        <% end %>
+        <% end %>
+
+        <% if @floorplan_images %>
+        <% @floorplan_images.each do |floorplan_image| %>
+
+        <li><!--a tabindex="1"--><%= image_tag floorplan_image.floorplan_image.url(), class:"jbox-img"%><!--/a--></li>
+         <!--span class="close"></span-->
+        <% end %>
+         <% else %>
+  <h2> No floorplan images  </h2>
+
+        
+        <% end %>
+      </ul>
+    </div>
+  </div><br>
+</div>
+
+
+<%= render 'enquery_form' %>
+<!--%= render 'home_info_enqueries/new'%-->
+

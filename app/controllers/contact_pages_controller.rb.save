@@ -1,0 +1,25 @@
+class ContactPagesController < ApplicationController
+ 
+ def new
+ @message =  ContactPage.new
+ end
+
+ def create
+  @message = ContactPage.new(params[:message])
+#  render text: params[:message].to_yaml and return
+  # @message.valid?
+   @message.save
+   flash[:notice]="details saved successfully"
+  redirect_to contact_pages_path
+# else 
+# redirect_to contact_pages_path
+# flash[:notice]="details not saved"
+# end
+end
+
+private
+  def contact_params
+    params.require(:message).permit( :first_name, :last_name, :email,:gender, :designation,:salary,:bloodgroup, :mobile)
+  end 
+
+end

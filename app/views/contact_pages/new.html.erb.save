@@ -1,0 +1,95 @@
+
+<%= form_for(@message, :url => contact_pages_path, :html => { method: :post }) do |f| %>
+<% if @message.errors.any? %>
+        <div id="error_explanation">
+          <h3>
+            <%= pluralize(@message.errors.count, "error") %>
+            prohibited this employee from being saved:
+          </h3>
+          <ul>
+            <% @message.errors.full_messages.each do |message| %>
+              <li>
+                <%= message %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+  <div class="control-group">
+    <%= f.label :First_Name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :first_name, :class => 'text_field' %>
+    </div>
+  </div>
+<div class="control-group">
+    <%= f.label :last_Name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :last_name, :class => 'text_field' %>
+    </div>
+  </div>
+
+<div class="control-group">
+    <%= f.label :Email, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :email, :class => 'text_field' %>
+    </div>
+  </div>
+
+<div class="control-group">
+    <%= f.label :Phone_Number, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :phone, :class => 'text_field' %>
+    </div>
+  </div>
+
+<%= f.select :do_you_have_land, [["yes","yes"], ["no","no"],
+                                                
+                                                
+                                        ], id: 'do_you_have_land', prompt: 'do you have land', :required => false, class: 'form-control' %>
+
+
+<%= f.select :moving_time_frame, [["A","A"], ["B","B"],
+                                                
+                                                
+                                        ], id: 'moving_time_frame', prompt: 'Select...', :required => false, class: 'form-control' %>
+
+
+<%= f.select :financing, [["A","A"], ["B","B"],
+                                                
+                                                
+                                        ], id: 'financing', prompt: 'Select...', :required => false, class: 'form-control' %>
+
+<div class="control-group">
+    <%= f.label :Town_Planning_to_Build, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :town_planning_to_build, :class => 'text_field' %>
+    </div>
+  </div>
+
+
+
+<%= f.select :state, [["A","A"], ["B","B"],
+                                                
+                                                
+                                        ], id: 'state', prompt: 'Select...', :required => false, class: 'form-control' %>
+
+
+
+<div class="control-group">
+    <%= f.label :How_can_we_assist_you, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :assist_you, :class => 'text_field' %>
+    </div>
+  </div>
+
+
+
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+ 
+  </div>
+<% end %>
+
+

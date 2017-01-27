@@ -1,0 +1,16 @@
+<%= form_for @select_home do |f| %>
+<%= f.select :select_home, [["Single wide","Single wide"], ["Double wide","Double wide"], ["Triple wide","Triple wide"],
+                                                ["Others","Others"],
+                                                 ["Hot deals","Hot deals"],
+                                        ], id: 'home_type', prompt: 'Select...', :required => false, class: 'form-control' %>
+
+<%= f.submit nil, :class => 'btn btn-primary' %>
+<% end %>
+
+
+<%= form_tag search_path do %>
+  <label for="lookup">Lookup</label>
+ 
+  <%= select_tag :select_home, options_for_select([["Single wide","Single wide"], ["Double wide","Double wide"], ["Triple wide","Triple wide"]]) %>
+ <%= submit_tag "Submit" %>
+<% end %>

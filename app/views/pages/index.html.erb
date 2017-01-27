@@ -1,0 +1,6 @@
+<%= form_tag search_path do %>
+  <label for="lookup">Lookup</label>
+
+  <%= select_tag :select_home, options_for_select([["Single wide","Single wide"], ["Double wide","Double wide"], ["Triple wide","Triple wide"],["Hot Deals","Hot deals"]]) %>
+ <%= submit_tag "Submit" %>
+<% end %>

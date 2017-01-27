@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  home_type: MyString
+  name: MyString
+  no_of_bedrooms: MyString
+  building_method: MyString
+  series: 
+  description: MyText
+  sft: MyString
+
+two:
+  home_type: MyString
+  name: MyString
+  no_of_bedrooms: MyString
+  building_method: MyString
+  series: 
+  description: MyText
+  sft: MyString

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Santex</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <li><%= link_to 'Sign in', new_user_session_path %></li>
+  <li><%= link_to 'Sign up', new_user_registration_path %></li>
+  <%= form_tag search_path do %>
+  <label for="lookup">Lookup</label>
+
+  <%= select_tag :select_home, options_for_select([["Single wide","Single wide"], ["Double wide","Double wide"], ["Triple wide","Triple wide"],["Hot Deals","Hot deals"]]) %>
+ <%= submit_tag "Submit" %>
+<% end %>
+
+<%= link_to "single_wide", search_path(:param1 => "single_wide") %>
+<%= link_to "double_wide", search_path(:param2 => "double_wide") %>
+<%= link_to "triple_wide", search_path(:param3 => "triple_wide") %>
+<%= link_to "hot_deals", search_path(:param4 => "hot_deals") %>
+
+
+   <%= render 'layouts/messages' %>
+    <%= yield %>
+  </body>
+</html>

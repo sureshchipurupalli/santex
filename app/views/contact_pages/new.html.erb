@@ -1,0 +1,88 @@
+
+<%= form_for @contact_page, :html => { :class => 'form-horizontal', multipart: true } do |f| %>
+
+
+  <div class="control-group">
+    <%= f.label :First_Name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :first_name, :class => 'text_field' %>
+     <%= errors_for @contact_page, :first_name%>
+    </div>
+  </div>
+<div class="control-group">
+    <%= f.label :last_Name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :last_name, :class => 'text_field' %>
+     <%= @contact_page.errors[:last_name].join(", ") %>
+    </div>
+  </div>
+
+<div class="control-group">
+    <%= f.label :Email, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :email, :class => 'text_field' %>
+      <%= @contact_page.errors[:email].join(", ") %>
+    </div>
+  </div>
+
+<div class="control-group">
+    <%= f.label :Phone_Number, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :phone, :class => 'text_field' %>
+      <%= errors_for @contact_page, :phone %>
+    </div>
+  </div>
+
+<div class="control-group">
+<%= f.select :do_you_have_land, [["yes","yes"], ["no","no"],
+                                                
+                                                
+                                        ], id: 'do_you_have_land', prompt: 'do you have land', :required => false, class: 'form-control' %>
+
+<%= errors_for @contact_page, :do_you_have_land %>
+</div>
+
+<%= f.select :moving_time_frame, [["A","A"], ["B","B"],
+                                                
+                                                
+                                        ], id: 'moving_time_frame', prompt: 'Select...', :required => false, class: 'form-control' %>
+
+
+<%= f.select :financing, [["A","A"], ["B","B"],
+                                                
+                                                
+                                        ], id: 'financing', prompt: 'Select...', :required => false, class: 'form-control' %>
+
+<div class="control-group">
+    <%= f.label :Town_Planning_to_Build, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :town_planning_to_build, :class => 'text_field' %>
+    </div>
+  </div>
+
+
+
+<%= f.select :state, [["A","A"], ["B","B"],
+                                                
+                                                
+                                        ], id: 'state', prompt: 'Select...', :required => false, class: 'form-control' %>
+
+
+
+<div class="control-group">
+    <%= f.label :How_can_we_assist_you, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :assist_you, :class => 'text_field' %>
+    </div>
+  </div>
+
+
+
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+ 
+  </div>
+<% end %>
+
+
